@@ -1,5 +1,17 @@
 # viem
 
+## 2.57.19
+
+### Patch Changes
+
+- [#5494](https://github.com/wevm/viem/pull/5494) [`0fee300f54aa6da04e4d2094c5f169ae1909fd1f`](https://github.com/wevm/viem/commit/0fee300f54aa6da04e4d2094c5f169ae1909fd1f) Thanks [@mortezashojaei](https://github.com/mortezashojaei)! - Fixed `InvalidDomainError` and `InvalidPrimaryTypeError` to set their `name`, and corrected `TxHashNotFoundInLogsErrorType` to describe `TxHashNotFoundInLogsError`.
+
+- [#5490](https://github.com/wevm/viem/pull/5490) [`1e117b1a6cf13fb0fb06ac6e002759fc0a66570b`](https://github.com/wevm/viem/commit/1e117b1a6cf13fb0fb06ac6e002759fc0a66570b) Thanks [@fmrmf](https://github.com/fmrmf)! - Added Kinetiq Elysium and Kinetiq Elysium Testnet chains.
+
+- [#5493](https://github.com/wevm/viem/pull/5493) [`cd91b17b229be5c06c02c57cb80a6188cf10fd0d`](https://github.com/wevm/viem/commit/cd91b17b229be5c06c02c57cb80a6188cf10fd0d) Thanks [@mortezashojaei](https://github.com/mortezashojaei)! - Appended the generic `ErrorType` to `GetFeeHistoryErrorType`, `GetEnsTextErrorType`, and `PrepareTransactionRequestErrorType` so unexpected throw sites are assignable.
+
+- [#5488](https://github.com/wevm/viem/pull/5488) [`5c6a920eb5ce88d50f64e22f1d848b29818c48d7`](https://github.com/wevm/viem/commit/5c6a920eb5ce88d50f64e22f1d848b29818c48d7) Thanks [@brendanjryan](https://github.com/brendanjryan)! - Added `chainId` to `ResolvedToken`, so a token resolved with `token(chainId)` records the chain it was resolved for, and added the Tempo Moderato address to `ousd`.
+
 ## 2.57.18
 
 ### Patch Changes
