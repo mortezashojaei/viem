@@ -1,7 +1,6 @@
+import type { ReadContractErrorType } from 'viem/actions'
+import type { GetL1TokenBalanceErrorType } from 'viem/zksync'
 import { expectTypeOf, test } from 'vitest'
-
-import type { ReadContractErrorType } from '../../actions/public/readContract.js'
-import type { GetL1TokenBalanceErrorType } from './getL1TokenBalance.js'
 
 test('includes readContract errors', () => {
   const propagated: GetL1TokenBalanceErrorType = {} as ReadContractErrorType

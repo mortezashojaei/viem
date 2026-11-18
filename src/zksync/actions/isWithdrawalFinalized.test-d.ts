@@ -1,8 +1,10 @@
+import type {
+  GetTransactionReceiptErrorType,
+  ReadContractErrorType,
+} from 'viem/actions'
+import type { IsAddressEqualErrorType } from 'viem/utils'
+import type { IsWithdrawalFinalizedErrorType } from 'viem/zksync'
 import { expectTypeOf, test } from 'vitest'
-
-import type { GetTransactionReceiptErrorType } from '../../actions/public/getTransactionReceipt.js'
-import type { ReadContractErrorType } from '../../actions/public/readContract.js'
-import type { IsWithdrawalFinalizedErrorType } from './isWithdrawalFinalized.js'
 
 test('includes receipt and contract errors', () => {
   const receiptError: IsWithdrawalFinalizedErrorType =
@@ -26,4 +28,13 @@ test('retains receipt and contract error discriminants', () => {
       `0x${string}` | undefined
     >()
   }
+})
+
+test('includes withdrawal log address errors', () => {
+  expectTypeOf<IsAddressEqualErrorType>().toExtend<IsWithdrawalFinalizedErrorType>()
+
+  const error = {} as IsWithdrawalFinalizedErrorType
+  if (error.name !== 'InvalidAddressError') return
+
+  expectTypeOf(error.name).toEqualTypeOf<'InvalidAddressError'>()
 })
